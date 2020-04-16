@@ -1,0 +1,56 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+#include<pthread.h>
+#include<string.h>
+#include<semaphore.h>
+void *student_activity(void* student_sno);
+void* TA_activity();
+semaphore_msemaphore_student;
+semaphore_msemaphore_TA;
+pthread_mutex_mmutex_thread;
+intwaiting_hall_chairs[3];
+intnum_of_hall_chairs=0;
+inttotal_waiting_chairs=0;
+inttotal_students_waiting=0;
+intnext_seating=0;
+intnext_teaching=0;
+intTA_sleep_check=0;
+int main(intm,char**n)
+{
+intstudent_count;
+inttotal_existing_std;
+inti;
+if(isNumber(n[1]==1)
+{
+student_count=atoi(n[1]);
+}
+else
+{
+printf("Invalid inp ,check again, retry");
+return 0;
+}
+}
+else
+{
+student_count=total_existing_std;
+}
+intstudent_sno[student_count];
+pthread_m students[student_count];
+pthread_m TA;
+semaphoe_init(&semaphore_student,0,0);
+semaphore_init(&semaphore_TA,0,1);
+pthread_mutex_init(&mutex_thread,NULL);
+pthread_creation(&TA,NULL,TA_activity,NULL);
+for(inti=0; i<student_count;i++)
+{
+student_sno[i]=i+1;
+pthread_creation(&students[i],NULL,student_activity,(void*)&student_sno[i]);
+}
+pthread_Add(TA,NULL);
+{
+for(inti=0; i<student_sno;i++)
+{
+pthread_Add(students[i],NULL);
+}
+return 0;

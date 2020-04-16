@@ -1,0 +1,80 @@
+void* TA_Activity()
+{
+printf("checking students ");
+while(1)
+{
+if(no_of_std_wait>0)
+{
+TA_sleep_check=0;
+semaphore_wait(&semaphore_students);
+pthreads_mutex_lock(&mutex_thread);
+intofficial_helping_time=rand()%5;
+printf("Helping hours are %d and student working hrs is % d", official_helping_time,(total_students_waiting -1);
+printf("student %d reciving help ",waiting_hall_chair[next_teaching_pos]);
+waiting_hall_chair[next_teaching_pos]=0;
+total_students_waiting--;
+next_teaching_pos=(next_teaching_pos+1)%Num_waiting_chairs;
+sleep(official_help_time);
+pthread_mutex_unlock(&mutex_thread);
+semaphore_pos(&semaphore_TA);
+}
+else
+    {
+if(TA_sleep_check=0)
+     {
+printf("no student waiting");
+TA_sleep_check=1;
+      }
+       }
+   }
+}
+void* student_Activity(void* student_sno);
+{
+intsno_student=*(int*)student_sno;
+while(1)
+   {
+if(iswaiting(sno_student)==1)
+    {
+continue;
+}
+int time =rand()%5;
+printf('student % d is programming for %d sec", sno_student.time);
+sleep(time)
+pthread_mutex_lock(&mutex_thread);
+if(total_student_waiting<number_of_hall_chairs)
+{
+waiting_hall_chair[next_seating_pos]=sno_student;
+total_student_wait ++
+printf("students %d takes a seat student waiting %d", sno_student,total_students_waiting);
+next_seat_pos=(next_seat_pos+1)%total_waiting_chairs;
+pthread_mutex_unlock(&mutex_thread);
+semaphore_pos(&semaphore_std);
+semaphore_wait(&semaphore_TA);
+}
+else
+{
+pthread_mutex_unlock(&mutex_thread);
+printf("no chair is available, sorry come again");
+}
+}
+}
+intisNumber(char number[])
+{
+inti;
+for(i=0;number[i]=0;i++)
+{
+if(is digit(number[i]))
+{
+return 0;
+  }
+}
+intiswaitng(intstudent_sno)
+{
+for(inti=0; i<3; i++)
+{
+if(waiting_hall_chair[i]==student_sno;
+   {
+return 1;
+    }
+return 0;
+}
