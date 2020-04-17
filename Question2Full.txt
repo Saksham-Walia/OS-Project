@@ -1,0 +1,96 @@
+
+#include<stdio.h>
+     #include<string.h>
+     #include<conio.h>
+     #include<stdlib.h>
+     #include<time.h>//for manipulating time
+
+
+IntRandom_check=0;
+Typedef long longll;
+
+    Void Inputvalues(ll*virtual_pages,lltotal_pages, lltotal_frames);
+
+Intpagehitting(ll *frames_list, lltotal_frames , ll goals);
+ {
+For(inti=0; i<total_frames; i++)
+{
+If(frames_list[i]==goal)
+ Return 1;
+}
+Return 0;
+}
+
+Void genertepages(ll *virtual_pages, lltotal_pages)
+{
+For(inti=0; i<total_pages; i++)
+
+Virtual_pages[i]==(rand()%10)//for generation of random 0-9 pages
+}
+
+Intmain(int m, const , char**n)
+{
+Srand(time(NULL));//internal clock to control choice of seed
+
+lltotal_pages;
+
+ll*virtual_pages;
+if(m==1)
+{
+Printf("Enter number of virtual pages");
+Scanf("%lld",&total_pages);
+Virtual_pages=(ll*)malloc(sizeof(ll))*total_pages);
+
+Intgenerate_pages(virtual_pages,total_pages);
+Random_check=1;
+
+}
+
+Else
+{
+Total_page=m-1;
+Virtual_pages=(ll*)malloc(sizeof(ll)*total_pages);
+Int index=0;
+
+For(inti=1;i<m;i++)
+Virtual_pages[index++]=atoll(n[i]);
+}
+
+lltotal_frames;
+printf("Enter total number of frames");
+scanf("%lld,&total_frames");
+inputs(virtual_pages, total_pages, total_frames);
+ll *frames_list=(ll*)malloc(total_frames*sizeof(ll));
+
+memoryset(frames_list,-1,total_frames*,sizeof(ll));
+llcount_page_hitting;
+count_page_fault;
+
+count_page_hitting=count_page_fault=0;
+ll last=-1;
+for(inti=0;i<total_pages;i++)
+{
+If(get pagehit(frames_list,total_frames,virtual_pages[i]))
+Count_page_hitting++;
+Else
+{
+Frames_list[++last%total_frames]=virtual_pages[i];
+Count_page_fault++;
+}
+}
+Printf("number of page hits are%lld\n",count_page_hitting);
+Printf("number of page faults are %lld\n",count_page_fault);
+Return 0;
+}
+Void inputs(ll* virtual_pages, lltotal_pages, lltotal_frames)
+{
+Printf("Entered data as follows");
+Printf("Number of pages : %lld\n", total_pages);
+If(random_check)
+Printf("Random");
+Printf("virtual pages");
+For(inti=0;i<total_pages;i++){
+Printf("%dlld",virtual_pages[i]);
+Printf("number of frames ",total_frames);
+}
+}

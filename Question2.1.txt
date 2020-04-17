@@ -1,0 +1,36 @@
+#include<stdio.h>
+     #include<string.h>
+     #include<conio.h>
+     #include<stdlib.h>
+     #include<time.h>//for manipulating time
+
+
+IntRandom_check=0;
+Typedef long longll;
+
+    Void Inputvalues(ll*virtual_pages,lltotal_pages, lltotal_frames);
+
+Intpagehitting(ll *frames_list, lltotal_frames , ll goals);
+ {
+For(inti=0; i<total_frames; i++)
+{
+If(frames_list[i]==goal)
+ Return 1;
+}
+Return 0;
+}
+
+Void genertepages(ll *virtual_pages, lltotal_pages)
+{
+For(inti=0; i<total_pages; i++)
+
+Virtual_pages[i]==(rand()%10)//for generation of random 0-9 pages
+}
+
+Intmain(int m, const , char**n)
+{
+Srand(time(NULL));//internal clock to control choice of seed
+
+lltotal_pages;
+
+ll*virtual_pages;
